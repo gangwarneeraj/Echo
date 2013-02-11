@@ -1,0 +1,31 @@
+package sdslabs.echo.indexing
+import sdslabs.echo.mongo.EchoMongo
+import sdslabs.echo.utils.Settings
+
+object EchoTest {
+  
+  def main(args : Array[String]) {
+  //  val a : EchoExtraction = new EchoExtraction()
+  //  val map = a.searchGoogle("php")
+  /*  a.searchGoogle("c++")
+    a.searchGoogle("ruby")
+    a.searchGoogle("php") */
+  //  val b = new EchoMongo()
+ //   val c : EchoSearching = new EchoSearching()
+ //   println(c.search("I have been so-many too-many persons, life unlike syntax allows one more than three, and at last somewhere the striking of a clock, twelve chimes, release"))
+ //   println(c.search("midnight childern"))
+ //   println(c.search("information theory"))
+    
+    val d : EchoMongo = new EchoMongo()
+    d.saveImages("http://bks1.books.google.com/books?id=N--YV7uyDI8C&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72JAtn82JnVVJV_w0M_5wI7VKRU66mh7tOM8QG3Oq1S5RRSC68wv-BfQSnpq-iVc953yFhMqIf4Xls1esBVb4QHV118aAgLt5f9p8k78-4g-2F5gWw&source=gbs_api", "984y7q8eruh")
+    
+ //   b.storeCategory("computer programming")
+ //   b.storeCategory("programming")
+ //   b.storeCategory("computer")
+ //   b.storeByCategory("programming", "book1")
+ //   b.storeByCategory("programming", "book4")
+ //   b.storeByCategory("programming", "book3")
+ //   b.storeByCategory("programming", "book2")
+  // b.saveImages("http://bks1.books.google.com/books?id=2KQNAAAAQAAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72uNOt1fHB7JAyA7ZAYQx9iWiDko_j-sjXlkDCXPcbYMWSnvMgIp239MEzrMqbzD9FAgnV5cgphUA04PjBacDxqRlVyvQ&source=gbs_api"); 
+  }
+}

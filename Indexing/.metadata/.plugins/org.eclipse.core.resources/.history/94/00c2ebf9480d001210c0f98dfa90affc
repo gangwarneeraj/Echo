@@ -1,0 +1,37 @@
+package sdslabs.echo.utils
+
+import java.io.File
+import java.net.URL
+
+class EchoFileInfo(url : URL) {
+  val file : File = new File(url.toExternalForm())
+  var bookName : String = file.getName()
+  var fileExtension : String = bookName.split('.').last
+  
+  def getExtension() : String = fileExtension
+  def getBookName() : String = bookName
+  def getFile() : File = file
+  
+  def downloadFile(str : String, name : String) : File = {
+    var out : OutputStream = null
+    var in : InputStream = null
+    try {
+		var url : URL = new URL(str)
+        val uc = url.openConnection()
+        val connection = uc.asInstanceOf[HttpURLConnection]
+        connection.setRequestMethod("GET")
+        val buffer : Array[Byte] = new Array[Byte](1024)
+        var numRead : Int = 0
+        in = connection.getInputStream()
+        var localFileName = "/home/neeraj/Desktop/" + name
+        out = new BufferedOutputStream(new FileOutputStream(localFileName))
+		Iterator.continually(in.read(buffer)).takeWhile(_ != -1).foreach(n => out.write(buffer,0,n))
+	} catch {
+        case e:Exception => println(e.printStackTrace())
+     }
+	out.close()
+	in.close()
+	var file : File = new File("/home/neeraj/Desktop/" + name)
+	file
+  }
+}

@@ -1,0 +1,13 @@
+package sdslabs.echo.utils
+
+import java.io.File
+
+class EchoFileInfo(path : String) {
+  val file : File = new File(path)
+  var bookName = file.getName()  
+  println(bookName)
+  var fileExtension : String = bookName.split(".").last
+  def getExtension() : String = fileExtension
+  def getBookName() : String = bookName
+  def getFile() : File = file
+}

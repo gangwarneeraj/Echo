@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;EchoSearching.scala&apos; to &apos;EchoIndexing/src/sdslabs.echo.indexing&apos;&#x0A;- Original project: &apos;EchoSearching&apos;&#x0A;- Destination element: &apos;EchoIndexing/src/sdslabs.echo.indexing&apos;&#x0A;- Original element: &apos;EchoSearching.scala&apos;" description="Copy file" destination="=EchoIndexing/src&lt;sdslabs.echo.indexing" element1="src/sdslabs/echo/searching/EchoSearching.scala" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1349020104600" units="0" version="1.0"/>
+</session>

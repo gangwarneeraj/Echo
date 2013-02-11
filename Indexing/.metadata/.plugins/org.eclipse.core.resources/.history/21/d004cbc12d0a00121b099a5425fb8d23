@@ -1,0 +1,35 @@
+package sdslabs.echo.utils
+import scala.AnyVal
+import java.io.File
+import java.io.FileInputStream
+import org.apache.pdfbox.pdfparser.PDFParser
+import org.apache.pdfbox.cos.COSDocument
+import org.apache.pdfbox.util.PDFTextStripper
+import org.apache.pdfbox.pdmodel.PDDocument
+import nl.siegmann.epublib.epub.EpubReader
+import nl.siegmann.epublib.domain.Book
+
+object WhichParser {
+  
+  def getText(file : EchoFileInfo) : String = {
+    var extension : String = file.getExtension()
+    var myfile : File = file.getFile()
+    val fi: FileInputStream  = new FileInputStream(myfile)
+    val text : String = ""
+    if(extension.compareTo("pdf") == 0) {
+      var parser =  new PDFParser(fi)
+      parser.parse()  
+      val cd: COSDocument = parser.getDocument()  
+      val stripper: PDFTextStripper = new PDFTextStripper()  
+      val text: String  = stripper.getText(new PDDocument(cd))  
+      cd.close
+    }
+    else if(extension.compareTo("epub") == 0) {
+      var epubReader : EpubReader  = new EpubReader()
+      var book : Book = epubReader.readEpub(fi)
+    }
+    return text
+     
+  }
+
+}

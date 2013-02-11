@@ -1,0 +1,23 @@
+package snippet;
+
+public class Snippet {
+	var out : OutputStream = null
+	    var in : InputStream = null
+	    try {
+			var url : URL = new URL(str)
+	        val uc = url.openConnection()
+	        val connection = uc.asInstanceOf[HttpURLConnection]
+	        connection.setRequestMethod("GET")
+	        val buffer : Array[Byte] = new Array[Byte](1024)
+	        var numRead : Int = 0
+	        in = connection.getInputStream()
+	        var localFileName = "/home/neeraj/Desktop/" + name
+	        out = new BufferedOutputStream(new FileOutputStream(localFileName))
+			Iterator.continually(in.read(buffer)).takeWhile(_ != -1).foreach(n => out.write(buffer,0,n))
+		} catch {
+	        case e:Exception => println(e.printStackTrace())
+	     }
+		out.close()
+		in.close()
+}
+

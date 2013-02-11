@@ -1,0 +1,22 @@
+package sdslabs.echo.utils
+
+class Settings {
+  
+	private var indexDirName : String = ""
+	private var indexDirDetails : String = ""
+    private var categoryList : String = ""
+    private var infoFile : String = ""
+    private var catDir : String = ""
+    private var errorFile : String = ""
+    private var booksDir : String = ""
+    
+	  def getErrorFile() : String = errorFile
+	  def getIndexDirName() : String = indexDirName
+	  def getIndexDirDetails() : String = indexDirDetails
+	  def getCategoryList() : String = categoryList
+	  def getInfoFile() : String = infoFile
+	  def getCategoryDir() : String = catDir
+	  def getBooksDir() : String = booksDir
+
+
+}
